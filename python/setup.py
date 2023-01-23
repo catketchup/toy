@@ -4,10 +4,10 @@ from Cython.Build import cythonize
 
 toy_extension = Extension(
     name='pytoy',
-    sources=['pytoy.pyx'],
+    sources=['python/pytoy.pyx'],
     libraries=['toy_module'],
-    library_dirs=['../lib'],
-    include_dirs=['../include']
+    library_dirs=['build/lib'],
+    include_dirs=['include']
 )
 
 setup(

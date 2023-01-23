@@ -4,20 +4,20 @@
 {
     "distutils": {
         "depends": [
-            "../include/toy_module.h"
+            "include/toy_module.h"
         ],
         "include_dirs": [
-            "../include"
+            "include"
         ],
         "libraries": [
             "toy_module"
         ],
         "library_dirs": [
-            "../lib"
+            "build/lib"
         ],
         "name": "pytoy",
         "sources": [
-            "pytoy.pyx"
+            "python/pytoy.pyx"
         ]
     },
     "module_name": "pytoy"
@@ -840,7 +840,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "pytoy.pyx",
+  "python/pytoy.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1065,17 +1065,17 @@ static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_pytoy[] = "pytoy";
-static const char __pyx_k_pytoy_pyx[] = "pytoy.pyx";
 static const char __pyx_k_pytoy_function[] = "pytoy_function";
+static const char __pyx_k_python_pytoy_pyx[] = "python/pytoy.pyx";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static PyObject *__pyx_n_s_a;
 static PyObject *__pyx_n_s_b;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
+static PyObject *__pyx_kp_s_python_pytoy_pyx;
 static PyObject *__pyx_n_s_pytoy;
 static PyObject *__pyx_n_s_pytoy_function;
-static PyObject *__pyx_kp_s_pytoy_pyx;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_pf_5pytoy_pytoy_function(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b); /* proto */
 static PyObject *__pyx_tuple_;
@@ -1248,9 +1248,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
+  {&__pyx_kp_s_python_pytoy_pyx, __pyx_k_python_pytoy_pyx, sizeof(__pyx_k_python_pytoy_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_pytoy, __pyx_k_pytoy, sizeof(__pyx_k_pytoy), 0, 0, 1, 1},
   {&__pyx_n_s_pytoy_function, __pyx_k_pytoy_function, sizeof(__pyx_k_pytoy_function), 0, 0, 1, 1},
-  {&__pyx_kp_s_pytoy_pyx, __pyx_k_pytoy_pyx, sizeof(__pyx_k_pytoy_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -1271,7 +1271,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple_ = PyTuple_Pack(2, __pyx_n_s_a, __pyx_n_s_b); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pytoy_pyx, __pyx_n_s_pytoy_function, 4, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_pytoy_function, 4, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 4, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
