@@ -23,9 +23,10 @@ $(LIBDIR)/libtoy_module.a: $(BLDDIR)/toy_module.o
 
 $(PYDIR)/pytoy: $(PYDIR)/setup.py $(PYDIR)/pytoy.pyx $(LIBDIR)/libtoy_module.a
 	python $< build_ext --inplace  && rm -rf $(PYDIR)/build
+	python $< install --user && rm $(MDIR)/*.so
+
 
 .PHONY: clean
 
 clean:
-	rm $(BLDDIR)/*.o $(LIBDIR)/*.a
-
+	rm $(BLDDIR)/*.o $(LIBDIR)/*.a $(PYDIR)/*.c

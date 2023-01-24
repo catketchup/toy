@@ -11,6 +11,9 @@ toy_extension = Extension(
 )
 
 setup(
+    author='Hongbo Cai',
+    author_email='hoc34@pitt.edu',
     name='pytoy',
     ext_modules=cythonize([toy_extension])
+
 )
