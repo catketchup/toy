@@ -6,6 +6,7 @@ int main(int argc, char **argv) {
   int c;
 
   c = toy_function(a,b);
+  printf("\n");
   printf("%d", c);
   return 0;
 }
