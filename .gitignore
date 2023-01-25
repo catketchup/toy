@@ -1,5 +1,4 @@
-obj/
-lib/
+build/
 .ipynb_checkpoints
 toy
 GPATH

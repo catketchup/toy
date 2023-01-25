@@ -9,7 +9,8 @@ PYDIR = $(MDIR)/python
 # .base:
 # 	if ! [ -e $(BLDDIR) ]; then mkdir $(BLDDIR) ; mkdir $(LIBDIR); fi;
 # 	touch build/.base
-# vpath .base build
+
+$(shell if [ ! -e $(BLDDIR) ];then mkdir $(BLDDIR); mkdir $(LIBDIR); fi)
 
 CC = gcc
 
@@ -30,3 +31,5 @@ $(PYDIR)/pytoy: $(PYDIR)/setup.py $(PYDIR)/pytoy.pyx $(LIBDIR)/libtoy_module.a
 
 clean:
 	rm $(BLDDIR)/*.o $(LIBDIR)/*.a $(PYDIR)/*.c
+	rm -rf $(BLDDIR)
+	rm -rf $(LIBDIR)
