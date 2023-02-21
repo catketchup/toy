@@ -9,6 +9,6 @@
 #include "float.h"
 
 /* tools for toy */
-#include "toy_module.h"
+#include "ps.h"
 
 #endif

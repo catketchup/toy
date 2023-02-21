@@ -13,11 +13,6 @@ int calculate_ps (
   struct input * pinput,
   struct ps * pps
   ) {
-  pps->cl_size = pinput->cl_size;
+  pps->cl_size = pparam->cl_size;
   int i;
-  double *cl = malloc(pinput->cl_size);
-
-  for (i=0; i<pinput->cl_size; i++) {
-    
-  }
 }

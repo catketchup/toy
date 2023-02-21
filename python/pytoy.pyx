@@ -1,5 +1,5 @@
 cdef extern from "toy_module.h":
-    int toy_function(int a, int b)
+    double add(double a, double b)
 
 class Compute:
     def __init__(self, a, b):
@@ -13,7 +13,7 @@ class Compute:
         print("potato, broccoli, lotus root")
 
     def add(self):
-        return toy_function(self.a, self.b)
+        return add(self.a, self.b)
 
 
 # cdef class Compute:
