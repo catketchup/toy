@@ -2,6 +2,7 @@ MDIR := $(shell pwd)
 IDIR = $(MDIR)/include
 SRCDIR = $(MDIR)/source
 MAINDIR = $(MDIR)/main
+LOCALDIR :=$(shell python -m site --user-site)
 
 BLDDIR = $(MDIR)/build
 LIBDIR = $(BLDDIR)/lib
@@ -62,6 +63,7 @@ $(PYDIR)/pytoy: $(PYDIR)/setup.py $(PYDIR)/pytoy.pyx $(LIBDIR)/libtoy_module.a
 .PHONY: clean
 
 clean:
+	rm $(LOCALDIR)/pytoy*
 	rm $(BLDDIR)/*.o $(LIBDIR)/*.a $(PYDIR)/*.c
 	rm -rf $(BLDDIR)
 	rm -rf $(LIBDIR)

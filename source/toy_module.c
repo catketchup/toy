@@ -4,6 +4,5 @@
 int toy_function(
   int a, int b) {
   int c = a+b;
-  printf("Hello, Niuniu!");
   return c;
 }
