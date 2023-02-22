@@ -1,11 +1,11 @@
-#ifndef __INPUT__
-#define __INPUT__
+#ifndef __INPARAM__
+#define __INPARAM__
 
-struct input {
+struct inparam {
   int cl_size;
+  double norm;
   double factor;
-  double exponent;
-}
+};
 
 #ifdef __cplusplus
 extern "C" {
