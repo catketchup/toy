@@ -32,19 +32,19 @@ TOY = $(MDIR)/toy
 default: $(TOY)
 
 $(INPARAM.O): $(INPARAM.C) $(INPARAM.H)
-	$(CC) -c $(INPARAM.C) -o $@  -I $(IDIR)
+	$(CC) -c $(INPARAM.C) -o $@  -I $(IDIR) -lm
 
 $(PSPEC.O): $(PSPEC.C) $(INPARAM.H) $(PSPEC.H)
-	$(CC) -c $(PSPEC.C) -o $@  -I $(IDIR)
+	$(CC) -c $(PSPEC.C) -o $@  -I $(IDIR) -lm
 
 $(LIBDIR)/libtoy.a: $(INPARAM.O) $(PSPEC.O)
 	ar rcs $@ $(INPARAM.O) $(PSPEC.O)
 
 $(TOY.O): $(TOY.C) $(INPARAM.C) $(PSPEC.C) $(INPARAM.H) $(PSPEC.H) $(TOY.H)
-	$(CC) -c $(TOY.C) -o $@  -I $(IDIR)
+	$(CC) -c $(TOY.C) -o $@  -I $(IDIR) -lm
 
 $(TOY): $(TOY.O) $(PSPEC.O) $(TOY.H) $(PSPEC.H)
-	$(CC) $(TOY.O) $(INPARAM.O) $(PSPEC.O) -o $(TOY)
+	$(CC) -g $(TOY.O) $(INPARAM.O) $(PSPEC.O) -o $(TOY) -lm
 
 $(PYDIR)/pytoy: $(PYDIR)/setup.py $(PYDIR)/pytoy.pyx $(LIBDIR)/libtoy.a
 	python $< build_ext --inplace  && rm -rf $(PYDIR)/build

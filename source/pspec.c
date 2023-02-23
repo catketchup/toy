@@ -17,8 +17,8 @@ int calculate_pspec (
   ppspec->cl_size = cl_size;
 
   for (i=0; i<cl_size; i++) {
-    /* cl[i] = norm*exp(factor*i); */
-    cl[i] = norm*factor*i;
+    cl[i] = norm*exp(factor*i);
+    /* cl[i] = norm*factor*i; */
   }
 
   for (i=0; i<cl_size; i++) {
