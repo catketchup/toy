@@ -10,7 +10,8 @@ struct inparam {
 #ifdef __cplusplus
 extern "C" {
 #endif
-  /* int read_input (struct input * pinput); */
+  double add (
+    double a, double b);
 #ifdef __cplusplus
 }
 #endif

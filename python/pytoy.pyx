@@ -13,12 +13,13 @@ cdef extern from "inparam.h":
         double norm
         double factor
 
+    double add(double a, double b)
+
 cdef extern from "pspec.h":
     cdef struct pspec:
         int cl_size
         double * cl
 
-    double add(double a, double b)
     int calculate_pspec(void * pinparam, void * ppspec)
 
 class Test_Compute:
@@ -38,15 +39,14 @@ class Test_Compute:
 cdef class Compute:
     cdef inparam * pinparam
     cdef pspec * ppspec
-    cpdef int computed
-    cpdef int allocated
-
-    pinparam = <inparam*> calloc(sizeof(inparam))
-    ppspec = <pspec*> calloc(sizeof(pspec))
+    cdef int computed
+    cdef int allocated
 
     def __cinit__(self, default=False):
         self.computed = False
         self.allocated = False
+        self.pinparam = <inparam*> calloc(3, sizeof(double))
+        self.ppspec = <pspec*> calloc(2, sizeof(double))
 
     def set(self, *args, **kwargs):
         self.pinparam.cl_size = kwargs['cl_size']

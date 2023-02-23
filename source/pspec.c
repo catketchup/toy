@@ -2,13 +2,6 @@
 #include "pspec.h"
 #include "math.h"
 
-double add (
-  double a, double b) {
-  double c = a+b;
-  return c;
-}
-
-
 int calculate_pspec (
   struct inparam * pinparam,
   struct pspec * ppspec
