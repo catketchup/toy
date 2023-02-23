@@ -55,12 +55,12 @@ cdef class Compute:
 
     def calculate_pspec(self):
         calculate_pspec(self.pinparam, self.ppspec)
-        cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)
+        cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
 
         for ell in range(self.pinparam.cl_size):
             cl[ell] = self.ppspec.cl[ell]
 
-        output = {'ell':np.arange(self.pinparam.cl_size+1), 'Cl':cl}
+        output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
         return output
 
     def get_cl_size(self):

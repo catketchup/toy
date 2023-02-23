@@ -1703,10 +1703,10 @@ static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
@@ -2472,7 +2472,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_2set(struct __pyx_obj_5pytoy_Compute *
  * 
  *     def calculate_pspec(self):             # <<<<<<<<<<<<<<
  *         calculate_pspec(self.pinparam, self.ppspec)
- *         cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)
+ *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
  */
 
 /* Python wrapper */
@@ -2511,7 +2511,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
  * 
  *     def calculate_pspec(self):
  *         calculate_pspec(self.pinparam, self.ppspec)             # <<<<<<<<<<<<<<
- *         cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)
+ *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
  * 
  */
   (void)(calculate_pspec(__pyx_v_self->pinparam, __pyx_v_self->ppspec));
@@ -2519,7 +2519,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   /* "pytoy.pyx":58
  *     def calculate_pspec(self):
  *         calculate_pspec(self.pinparam, self.ppspec)
- *         cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)             # <<<<<<<<<<<<<<
+ *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)             # <<<<<<<<<<<<<<
  * 
  *         for ell in range(self.pinparam.cl_size):
  */
@@ -2528,7 +2528,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_long((__pyx_v_self->pinparam->cl_size + 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -2553,7 +2553,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   __pyx_t_5 = 0;
 
   /* "pytoy.pyx":60
- *         cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)
+ *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
  * 
  *         for ell in range(self.pinparam.cl_size):             # <<<<<<<<<<<<<<
  *             cl[ell] = self.ppspec.cl[ell]
@@ -2569,7 +2569,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
  *         for ell in range(self.pinparam.cl_size):
  *             cl[ell] = self.ppspec.cl[ell]             # <<<<<<<<<<<<<<
  * 
- *         output = {'ell':np.arange(self.pinparam.cl_size+1), 'Cl':cl}
+ *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  */
     __pyx_t_5 = PyFloat_FromDouble((__pyx_v_self->ppspec->cl[__pyx_v_ell])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -2580,7 +2580,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   /* "pytoy.pyx":63
  *             cl[ell] = self.ppspec.cl[ell]
  * 
- *         output = {'ell':np.arange(self.pinparam.cl_size+1), 'Cl':cl}             # <<<<<<<<<<<<<<
+ *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}             # <<<<<<<<<<<<<<
  *         return output
  * 
  */
@@ -2591,7 +2591,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_arange); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_long((__pyx_v_self->pinparam->cl_size + 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2617,7 +2617,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
 
   /* "pytoy.pyx":64
  * 
- *         output = {'ell':np.arange(self.pinparam.cl_size+1), 'Cl':cl}
+ *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  *         return output             # <<<<<<<<<<<<<<
  * 
  *     def get_cl_size(self):
@@ -2632,7 +2632,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
  * 
  *     def calculate_pspec(self):             # <<<<<<<<<<<<<<
  *         calculate_pspec(self.pinparam, self.ppspec)
- *         cl = np.zeros(self.pinparam.cl_size+1, dtype=np.double)
+ *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
  */
 
   /* function exit code */
@@ -7549,44 +7549,6 @@ raise_neg_overflow:
 }
 
 /* CIntToPy */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const long neg_one = (long) -1, const_zero = (long) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(long) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(long) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(long) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(long),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
 #pragma GCC diagnostic push
@@ -7620,6 +7582,44 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(int),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const long neg_one = (long) -1, const_zero = (long) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(long) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(long) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(long) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(long) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(long),
                                      little, !is_unsigned);
     }
 }
