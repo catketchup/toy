@@ -5,7 +5,7 @@ from Cython.Build import cythonize
 toy_extension = Extension(
     name='pytoy',
     sources=['python/pytoy.pyx'],
-    libraries=['ps'],
+    libraries=['pspec', 'inparam'],
     library_dirs=['build/lib'],
     include_dirs=['include']
 )

@@ -18,8 +18,8 @@ int calculate_pspec (
   double factor = pinparam->factor;
 
   int i;
-  double * cl = malloc(cl_size);
-  ppspec->cl = malloc(cl_size);
+  double * cl = malloc(cl_size*sizeof(double));
+  ppspec->cl = malloc(cl_size*sizeof(double));
 
   ppspec->cl_size = cl_size;
 
@@ -27,6 +27,7 @@ int calculate_pspec (
     /* cl[i] = norm*exp(factor*i); */
     cl[i] = norm*factor*i;
   }
+
   for (i=0; i<cl_size; i++) {
     ppspec->cl[i] = cl[i];
   }

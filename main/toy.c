@@ -1,12 +1,34 @@
-#include "toy.h"
+#include "inparam.h"
+#include "pspec.h"
+#include "stdio.h"
 
-int main(int argc, char **argv) {
-  int a = 1;
-  int b = 1;
-  int c;
+/* gcc -g toy.c ../source/pspec.c -o toy -I ../include/ */
 
-  c = toy_function(a,b);
-  printf("\n");
-  printf("%d", c);
+int main(){
+  int cl_size = 10;
+  double norm = 2.0;
+  double factor = 3.0;
+
+  struct inparam * pinparam;
+  struct pspec * ppspec;
+
+  /* alloc memeory for structures */
+  pinparam = (struct inparam*) malloc(sizeof(struct inparam));
+  ppspec = (struct pspec*) malloc(sizeof(struct pspec));
+
+  printf("%ld \n", sizeof(struct pspec));
+
+  pinparam->cl_size = cl_size;
+  pinparam->norm = norm;
+  pinparam->factor = factor;
+
+  printf("%d \n", pinparam->cl_size);
+  calculate_pspec(pinparam, ppspec);
+
+  int i;
+  for(i=0; i<cl_size; i++) {
+    printf("%f \n", ppspec->cl[i]);
+  }
+
   return 0;
 }
