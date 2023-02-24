@@ -27,12 +27,6 @@ class Test_Compute:
         self.a = a
         self.b = b
 
-    def greet(self):
-        print('Hello, Niuniu!')
-
-    def food(self):
-        print("potato, broccoli, lotus root")
-
     def add(self):
         return add(self.a, self.b)
 
