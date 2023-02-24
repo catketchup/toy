@@ -21,6 +21,7 @@ cdef extern from "pspec.h":
         double * cl
 
     int calculate_pspec(void * pinparam, void * ppspec)
+    int calculate_pow_pspec(void * pinparam, double * incl, void * ppspec)
 
 class Test_Compute:
     def __init__(self, a, b):
@@ -59,6 +60,16 @@ cdef class Compute:
 
         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
         return output
+
+    # def calculate_exp_pspec(self, incl):
+    #     calculate_exp_pspec(self.pinparam, &incl, self.ppspec)
+    #     cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
+
+    #     for ell in range(self.pinparam.cl_size):
+    #         cl[ell] = self.ppspec.cl[ell]
+
+    #     output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
+    #     return output
 
     def get_cl_size(self):
         print(self.pinparam.cl_size)

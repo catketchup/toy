@@ -1139,7 +1139,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "pytoy.pyx":39
+/* "pytoy.pyx":37
  *         return add(self.a, self.b)
  * 
  * cdef class Compute:             # <<<<<<<<<<<<<<
@@ -1794,7 +1794,6 @@ static const char __pyx_k_end[] = "end";
 static const char __pyx_k_exp[] = "exp";
 static const char __pyx_k_log[] = "log";
 static const char __pyx_k_file[] = "file";
-static const char __pyx_k_food[] = "food";
 static const char __pyx_k_init[] = "__init__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_math[] = "math";
@@ -1832,11 +1831,9 @@ static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
 static const char __pyx_k_Test_Compute_add[] = "Test_Compute.add";
 static const char __pyx_k_python_pytoy_pyx[] = "python/pytoy.pyx";
-static const char __pyx_k_Test_Compute_food[] = "Test_Compute.food";
 static const char __pyx_k_Test_Compute_greet[] = "Test_Compute.greet";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_Test_Compute___init[] = "Test_Compute.__init__";
-static const char __pyx_k_potato_broccoli_lotus_root[] = "potato, broccoli, lotus root";
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
@@ -1847,7 +1844,6 @@ static PyObject *__pyx_n_s_ImportError;
 static PyObject *__pyx_n_s_Test_Compute;
 static PyObject *__pyx_n_s_Test_Compute___init;
 static PyObject *__pyx_n_s_Test_Compute_add;
-static PyObject *__pyx_n_s_Test_Compute_food;
 static PyObject *__pyx_n_s_Test_Compute_greet;
 static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_n_s_a;
@@ -1865,7 +1861,6 @@ static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_exp;
 static PyObject *__pyx_n_s_factor;
 static PyObject *__pyx_n_s_file;
-static PyObject *__pyx_n_s_food;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_n_s_greet;
 static PyObject *__pyx_n_s_import;
@@ -1882,7 +1877,6 @@ static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_kp_s_numpy_core_multiarray_failed_to;
 static PyObject *__pyx_kp_s_numpy_core_umath_failed_to_impor;
-static PyObject *__pyx_kp_s_potato_broccoli_lotus_root;
 static PyObject *__pyx_n_s_prepare;
 static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_kp_s_python_pytoy_pyx;
@@ -1899,8 +1893,7 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_zeros;
 static PyObject *__pyx_pf_5pytoy_12Test_Compute___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_a, PyObject *__pyx_v_b); /* proto */
 static PyObject *__pyx_pf_5pytoy_12Test_Compute_2greet(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pytoy_12Test_Compute_4food(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_5pytoy_12Test_Compute_6add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5pytoy_12Test_Compute_4add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_default); /* proto */
 static PyObject *__pyx_pf_5pytoy_7Compute_2set(struct __pyx_obj_5pytoy_Compute *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_args, PyObject *__pyx_v_kwargs); /* proto */
 static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pytoy_Compute *__pyx_v_self); /* proto */
@@ -1915,14 +1908,12 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__9;
-static PyObject *__pyx_tuple__11;
 static PyObject *__pyx_codeobj__6;
 static PyObject *__pyx_codeobj__8;
 static PyObject *__pyx_codeobj__10;
-static PyObject *__pyx_codeobj__12;
 /* Late includes */
 
-/* "pytoy.pyx":26
+/* "pytoy.pyx":27
  * 
  * class Test_Compute:
  *     def __init__(self, a, b):             # <<<<<<<<<<<<<<
@@ -1968,17 +1959,17 @@ static PyObject *__pyx_pw_5pytoy_12Test_Compute_1__init__(PyObject *__pyx_self, 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_a)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 26, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 27, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_b)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 26, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 27, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 27, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -1993,7 +1984,7 @@ static PyObject *__pyx_pw_5pytoy_12Test_Compute_1__init__(PyObject *__pyx_self, 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 26, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 27, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pytoy.Test_Compute.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2014,25 +2005,25 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute___init__(CYTHON_UNUSED PyObject 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "pytoy.pyx":27
+  /* "pytoy.pyx":28
  * class Test_Compute:
  *     def __init__(self, a, b):
  *         self.a = a             # <<<<<<<<<<<<<<
  *         self.b = b
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_a, __pyx_v_a) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_a, __pyx_v_a) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "pytoy.pyx":28
+  /* "pytoy.pyx":29
  *     def __init__(self, a, b):
  *         self.a = a
  *         self.b = b             # <<<<<<<<<<<<<<
  * 
  *     def greet(self):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_b, __pyx_v_b) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_b, __pyx_v_b) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
-  /* "pytoy.pyx":26
+  /* "pytoy.pyx":27
  * 
  * class Test_Compute:
  *     def __init__(self, a, b):             # <<<<<<<<<<<<<<
@@ -2052,7 +2043,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute___init__(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "pytoy.pyx":30
+/* "pytoy.pyx":31
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
@@ -2082,16 +2073,16 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_2greet(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("greet", 0);
 
-  /* "pytoy.pyx":31
+  /* "pytoy.pyx":32
  * 
  *     def greet(self):
  *         print('Hello, Niuniu!')             # <<<<<<<<<<<<<<
  * 
- *     def food(self):
+ *     def add(self):
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Hello_Niuniu) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Hello_Niuniu) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
 
-  /* "pytoy.pyx":30
+  /* "pytoy.pyx":31
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
@@ -2111,67 +2102,8 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_2greet(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "pytoy.pyx":33
+/* "pytoy.pyx":34
  *         print('Hello, Niuniu!')
- * 
- *     def food(self):             # <<<<<<<<<<<<<<
- *         print("potato, broccoli, lotus root")
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_5pytoy_12Test_Compute_5food(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_5pytoy_12Test_Compute_5food = {"food", (PyCFunction)__pyx_pw_5pytoy_12Test_Compute_5food, METH_O, 0};
-static PyObject *__pyx_pw_5pytoy_12Test_Compute_5food(PyObject *__pyx_self, PyObject *__pyx_v_self) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("food (wrapper)", 0);
-  __pyx_r = __pyx_pf_5pytoy_12Test_Compute_4food(__pyx_self, ((PyObject *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_5pytoy_12Test_Compute_4food(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("food", 0);
-
-  /* "pytoy.pyx":34
- * 
- *     def food(self):
- *         print("potato, broccoli, lotus root")             # <<<<<<<<<<<<<<
- * 
- *     def add(self):
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_potato_broccoli_lotus_root) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
-
-  /* "pytoy.pyx":33
- *         print('Hello, Niuniu!')
- * 
- *     def food(self):             # <<<<<<<<<<<<<<
- *         print("potato, broccoli, lotus root")
- * 
- */
-
-  /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("pytoy.Test_Compute.food", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "pytoy.pyx":36
- *         print("potato, broccoli, lotus root")
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
@@ -2179,20 +2111,20 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_4food(CYTHON_UNUSED PyObject *__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_5pytoy_12Test_Compute_7add(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_5pytoy_12Test_Compute_7add = {"add", (PyCFunction)__pyx_pw_5pytoy_12Test_Compute_7add, METH_O, 0};
-static PyObject *__pyx_pw_5pytoy_12Test_Compute_7add(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_5pytoy_12Test_Compute_5add(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_5pytoy_12Test_Compute_5add = {"add", (PyCFunction)__pyx_pw_5pytoy_12Test_Compute_5add, METH_O, 0};
+static PyObject *__pyx_pw_5pytoy_12Test_Compute_5add(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("add (wrapper)", 0);
-  __pyx_r = __pyx_pf_5pytoy_12Test_Compute_6add(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_5pytoy_12Test_Compute_4add(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_5pytoy_12Test_Compute_6add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_5pytoy_12Test_Compute_4add(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2203,7 +2135,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_6add(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add", 0);
 
-  /* "pytoy.pyx":37
+  /* "pytoy.pyx":35
  * 
  *     def add(self):
  *         return add(self.a, self.b)             # <<<<<<<<<<<<<<
@@ -2211,22 +2143,22 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_6add(CYTHON_UNUSED PyObject *__p
  * cdef class Compute:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_a); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_a); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_b); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(add(__pyx_t_2, __pyx_t_3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(add(__pyx_t_2, __pyx_t_3)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "pytoy.pyx":36
- *         print("potato, broccoli, lotus root")
+  /* "pytoy.pyx":34
+ *         print('Hello, Niuniu!')
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
@@ -2244,7 +2176,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_6add(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "pytoy.pyx":45
+/* "pytoy.pyx":43
  *     cdef int allocated
  * 
  *     def __cinit__(self, default=False):             # <<<<<<<<<<<<<<
@@ -2284,7 +2216,7 @@ static int __pyx_pw_5pytoy_7Compute_1__cinit__(PyObject *__pyx_v_self, PyObject 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 45, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 43, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -2298,7 +2230,7 @@ static int __pyx_pw_5pytoy_7Compute_1__cinit__(PyObject *__pyx_v_self, PyObject 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 45, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 43, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("pytoy.Compute.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2316,7 +2248,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "pytoy.pyx":46
+  /* "pytoy.pyx":44
  * 
  *     def __cinit__(self, default=False):
  *         self.computed = False             # <<<<<<<<<<<<<<
@@ -2325,7 +2257,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
  */
   __pyx_v_self->computed = 0;
 
-  /* "pytoy.pyx":47
+  /* "pytoy.pyx":45
  *     def __cinit__(self, default=False):
  *         self.computed = False
  *         self.allocated = False             # <<<<<<<<<<<<<<
@@ -2334,7 +2266,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
  */
   __pyx_v_self->allocated = 0;
 
-  /* "pytoy.pyx":48
+  /* "pytoy.pyx":46
  *         self.computed = False
  *         self.allocated = False
  *         self.pinparam = <inparam*> calloc(3, sizeof(double))             # <<<<<<<<<<<<<<
@@ -2343,7 +2275,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
  */
   __pyx_v_self->pinparam = ((struct inparam *)calloc(3, (sizeof(double))));
 
-  /* "pytoy.pyx":49
+  /* "pytoy.pyx":47
  *         self.allocated = False
  *         self.pinparam = <inparam*> calloc(3, sizeof(double))
  *         self.ppspec = <pspec*> calloc(2, sizeof(double))             # <<<<<<<<<<<<<<
@@ -2352,7 +2284,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
  */
   __pyx_v_self->ppspec = ((struct pspec *)calloc(2, (sizeof(double))));
 
-  /* "pytoy.pyx":45
+  /* "pytoy.pyx":43
  *     cdef int allocated
  * 
  *     def __cinit__(self, default=False):             # <<<<<<<<<<<<<<
@@ -2366,7 +2298,7 @@ static int __pyx_pf_5pytoy_7Compute___cinit__(struct __pyx_obj_5pytoy_Compute *_
   return __pyx_r;
 }
 
-/* "pytoy.pyx":51
+/* "pytoy.pyx":49
  *         self.ppspec = <pspec*> calloc(2, sizeof(double))
  * 
  *     def set(self, *args, **kwargs):             # <<<<<<<<<<<<<<
@@ -2407,46 +2339,46 @@ static PyObject *__pyx_pf_5pytoy_7Compute_2set(struct __pyx_obj_5pytoy_Compute *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set", 0);
 
-  /* "pytoy.pyx":52
+  /* "pytoy.pyx":50
  * 
  *     def set(self, *args, **kwargs):
  *         self.pinparam.cl_size = kwargs['cl_size']             # <<<<<<<<<<<<<<
  *         self.pinparam.norm = kwargs['norm']
  *         self.pinparam.factor = kwargs['factor']
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->pinparam->cl_size = __pyx_t_2;
 
-  /* "pytoy.pyx":53
+  /* "pytoy.pyx":51
  *     def set(self, *args, **kwargs):
  *         self.pinparam.cl_size = kwargs['cl_size']
  *         self.pinparam.norm = kwargs['norm']             # <<<<<<<<<<<<<<
  *         self.pinparam.factor = kwargs['factor']
  * 
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_norm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_norm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->pinparam->norm = __pyx_t_3;
 
-  /* "pytoy.pyx":54
+  /* "pytoy.pyx":52
  *         self.pinparam.cl_size = kwargs['cl_size']
  *         self.pinparam.norm = kwargs['norm']
  *         self.pinparam.factor = kwargs['factor']             # <<<<<<<<<<<<<<
  * 
  *     def calculate_pspec(self):
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_factor); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_kwargs, __pyx_n_s_factor); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->pinparam->factor = __pyx_t_3;
 
-  /* "pytoy.pyx":51
+  /* "pytoy.pyx":49
  *         self.ppspec = <pspec*> calloc(2, sizeof(double))
  * 
  *     def set(self, *args, **kwargs):             # <<<<<<<<<<<<<<
@@ -2467,7 +2399,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_2set(struct __pyx_obj_5pytoy_Compute *
   return __pyx_r;
 }
 
-/* "pytoy.pyx":56
+/* "pytoy.pyx":54
  *         self.pinparam.factor = kwargs['factor']
  * 
  *     def calculate_pspec(self):             # <<<<<<<<<<<<<<
@@ -2507,7 +2439,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("calculate_pspec", 0);
 
-  /* "pytoy.pyx":57
+  /* "pytoy.pyx":55
  * 
  *     def calculate_pspec(self):
  *         calculate_pspec(self.pinparam, self.ppspec)             # <<<<<<<<<<<<<<
@@ -2516,35 +2448,35 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
  */
   (void)(calculate_pspec(__pyx_v_self->pinparam, __pyx_v_self->ppspec));
 
-  /* "pytoy.pyx":58
+  /* "pytoy.pyx":56
  *     def calculate_pspec(self):
  *         calculate_pspec(self.pinparam, self.ppspec)
  *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)             # <<<<<<<<<<<<<<
  * 
  *         for ell in range(self.pinparam.cl_size):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2552,7 +2484,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   __pyx_v_cl = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "pytoy.pyx":60
+  /* "pytoy.pyx":58
  *         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
  * 
  *         for ell in range(self.pinparam.cl_size):             # <<<<<<<<<<<<<<
@@ -2564,34 +2496,34 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
     __pyx_v_ell = __pyx_t_8;
 
-    /* "pytoy.pyx":61
+    /* "pytoy.pyx":59
  * 
  *         for ell in range(self.pinparam.cl_size):
  *             cl[ell] = self.ppspec.cl[ell]             # <<<<<<<<<<<<<<
  * 
  *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  */
-    __pyx_t_5 = PyFloat_FromDouble((__pyx_v_self->ppspec->cl[__pyx_v_ell])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
+    __pyx_t_5 = PyFloat_FromDouble((__pyx_v_self->ppspec->cl[__pyx_v_ell])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    if (unlikely(__Pyx_SetItemInt(__pyx_v_cl, __pyx_v_ell, __pyx_t_5, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 61, __pyx_L1_error)
+    if (unlikely(__Pyx_SetItemInt(__pyx_v_cl, __pyx_v_ell, __pyx_t_5, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0)) __PYX_ERR(0, 59, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
 
-  /* "pytoy.pyx":63
+  /* "pytoy.pyx":61
  *             cl[ell] = self.ppspec.cl[ell]
  * 
  *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}             # <<<<<<<<<<<<<<
  *         return output
  * 
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_arange); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_arange); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -2606,28 +2538,28 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_ell, __pyx_t_1) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_ell, __pyx_t_1) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_Cl, __pyx_v_cl) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_Cl, __pyx_v_cl) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
   __pyx_v_output = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "pytoy.pyx":64
+  /* "pytoy.pyx":62
  * 
  *         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  *         return output             # <<<<<<<<<<<<<<
  * 
- *     def get_cl_size(self):
+ *     # def calculate_exp_pspec(self, incl):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_output);
   __pyx_r = __pyx_v_output;
   goto __pyx_L0;
 
-  /* "pytoy.pyx":56
+  /* "pytoy.pyx":54
  *         self.pinparam.factor = kwargs['factor']
  * 
  *     def calculate_pspec(self):             # <<<<<<<<<<<<<<
@@ -2652,8 +2584,8 @@ static PyObject *__pyx_pf_5pytoy_7Compute_4calculate_pspec(struct __pyx_obj_5pyt
   return __pyx_r;
 }
 
-/* "pytoy.pyx":66
- *         return output
+/* "pytoy.pyx":74
+ *     #     return output
  * 
  *     def get_cl_size(self):             # <<<<<<<<<<<<<<
  *         print(self.pinparam.cl_size)
@@ -2681,18 +2613,18 @@ static PyObject *__pyx_pf_5pytoy_7Compute_6get_cl_size(struct __pyx_obj_5pytoy_C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_cl_size", 0);
 
-  /* "pytoy.pyx":67
+  /* "pytoy.pyx":75
  * 
  *     def get_cl_size(self):
  *         print(self.pinparam.cl_size)             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->pinparam->cl_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pytoy.pyx":66
- *         return output
+  /* "pytoy.pyx":74
+ *     #     return output
  * 
  *     def get_cl_size(self):             # <<<<<<<<<<<<<<
  *         print(self.pinparam.cl_size)
@@ -3996,7 +3928,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Test_Compute, __pyx_k_Test_Compute, sizeof(__pyx_k_Test_Compute), 0, 0, 1, 1},
   {&__pyx_n_s_Test_Compute___init, __pyx_k_Test_Compute___init, sizeof(__pyx_k_Test_Compute___init), 0, 0, 1, 1},
   {&__pyx_n_s_Test_Compute_add, __pyx_k_Test_Compute_add, sizeof(__pyx_k_Test_Compute_add), 0, 0, 1, 1},
-  {&__pyx_n_s_Test_Compute_food, __pyx_k_Test_Compute_food, sizeof(__pyx_k_Test_Compute_food), 0, 0, 1, 1},
   {&__pyx_n_s_Test_Compute_greet, __pyx_k_Test_Compute_greet, sizeof(__pyx_k_Test_Compute_greet), 0, 0, 1, 1},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
   {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
@@ -4014,7 +3945,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_exp, __pyx_k_exp, sizeof(__pyx_k_exp), 0, 0, 1, 1},
   {&__pyx_n_s_factor, __pyx_k_factor, sizeof(__pyx_k_factor), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
-  {&__pyx_n_s_food, __pyx_k_food, sizeof(__pyx_k_food), 0, 0, 1, 1},
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_n_s_greet, __pyx_k_greet, sizeof(__pyx_k_greet), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
@@ -4031,7 +3961,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_kp_s_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 0, 1, 0},
   {&__pyx_kp_s_numpy_core_umath_failed_to_impor, __pyx_k_numpy_core_umath_failed_to_impor, sizeof(__pyx_k_numpy_core_umath_failed_to_impor), 0, 0, 1, 0},
-  {&__pyx_kp_s_potato_broccoli_lotus_root, __pyx_k_potato_broccoli_lotus_root, sizeof(__pyx_k_potato_broccoli_lotus_root), 0, 0, 1, 0},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_kp_s_python_pytoy_pyx, __pyx_k_python_pytoy_pyx, sizeof(__pyx_k_python_pytoy_pyx), 0, 0, 1, 0},
@@ -4049,7 +3978,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 58, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(2, 947, __pyx_L1_error)
   return 0;
@@ -4102,53 +4031,41 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "pytoy.pyx":26
+  /* "pytoy.pyx":27
  * 
  * class Test_Compute:
  *     def __init__(self, a, b):             # <<<<<<<<<<<<<<
  *         self.a = a
  *         self.b = b
  */
-  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_a, __pyx_n_s_b); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_a, __pyx_n_s_b); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_init, 26, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_init, 27, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 27, __pyx_L1_error)
 
-  /* "pytoy.pyx":30
+  /* "pytoy.pyx":31
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
  *         print('Hello, Niuniu!')
  * 
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_greet, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_greet, 31, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 31, __pyx_L1_error)
 
-  /* "pytoy.pyx":33
+  /* "pytoy.pyx":34
  *         print('Hello, Niuniu!')
- * 
- *     def food(self):             # <<<<<<<<<<<<<<
- *         print("potato, broccoli, lotus root")
- * 
- */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_food, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 33, __pyx_L1_error)
-
-  /* "pytoy.pyx":36
- *         print("potato, broccoli, lotus root")
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
  * 
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 36, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_add, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_add, 34, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4202,15 +4119,15 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_5pytoy_Compute.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_5pytoy_Compute.tp_dictoffset && __pyx_type_5pytoy_Compute.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_5pytoy_Compute.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Compute, (PyObject *)&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_Compute, (PyObject *)&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_5pytoy_Compute) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   __pyx_ptype_5pytoy_Compute = &__pyx_type_5pytoy_Compute;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -4535,74 +4452,62 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_2) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "pytoy.pyx":25
- *     int calculate_pspec(void * pinparam, void * ppspec)
+  /* "pytoy.pyx":26
+ *     int calculate_pow_pspec(void * pinparam, double * incl, void * ppspec)
  * 
  * class Test_Compute:             # <<<<<<<<<<<<<<
  *     def __init__(self, a, b):
  *         self.a = a
  */
-  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Test_Compute, __pyx_n_s_Test_Compute, (PyObject *) NULL, __pyx_n_s_pytoy, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_Test_Compute, __pyx_n_s_Test_Compute, (PyObject *) NULL, __pyx_n_s_pytoy, (PyObject *) NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "pytoy.pyx":26
+  /* "pytoy.pyx":27
  * 
  * class Test_Compute:
  *     def __init__(self, a, b):             # <<<<<<<<<<<<<<
  *         self.a = a
  *         self.b = b
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_1__init__, 0, __pyx_n_s_Test_Compute___init, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_1__init__, 0, __pyx_n_s_Test_Compute___init, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_1) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_init, __pyx_t_1) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pytoy.pyx":30
+  /* "pytoy.pyx":31
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
  *         print('Hello, Niuniu!')
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_3greet, 0, __pyx_n_s_Test_Compute_greet, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_3greet, 0, __pyx_n_s_Test_Compute_greet, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_greet, __pyx_t_1) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_greet, __pyx_t_1) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pytoy.pyx":33
+  /* "pytoy.pyx":34
  *         print('Hello, Niuniu!')
- * 
- *     def food(self):             # <<<<<<<<<<<<<<
- *         print("potato, broccoli, lotus root")
- * 
- */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_5food, 0, __pyx_n_s_Test_Compute_food, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_food, __pyx_t_1) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "pytoy.pyx":36
- *         print("potato, broccoli, lotus root")
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
  * 
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_7add, 0, __pyx_n_s_Test_Compute_add, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_5add, 0, __pyx_n_s_Test_Compute_add, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_add, __pyx_t_1) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_2, __pyx_n_s_add, __pyx_t_1) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pytoy.pyx":25
- *     int calculate_pspec(void * pinparam, void * ppspec)
+  /* "pytoy.pyx":26
+ *     int calculate_pow_pspec(void * pinparam, double * incl, void * ppspec)
  * 
  * class Test_Compute:             # <<<<<<<<<<<<<<
  *     def __init__(self, a, b):
  *         self.a = a
  */
-  __pyx_t_1 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_Test_Compute, __pyx_empty_tuple, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_Test_Compute, __pyx_empty_tuple, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Test_Compute, __pyx_t_1) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Test_Compute, __pyx_t_1) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
