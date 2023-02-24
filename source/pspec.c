@@ -12,8 +12,8 @@ int calculate_pspec (
 
   int i;
   double * cl = malloc(cl_size*sizeof(double));
-  ppspec->cl = malloc(cl_size*sizeof(double));
 
+  ppspec->cl = malloc(cl_size*sizeof(double));
   ppspec->cl_size = cl_size;
 
   for (i=0; i<cl_size; i++) {
@@ -26,6 +26,27 @@ int calculate_pspec (
   }
 
   free(cl);
+
+  return 0;
+}
+
+int calculate_exp_pspec (
+  struct inparam * pinparam,
+  double * incl,
+  struct pspec * ppspec
+  ) {
+  int cl_size = pinparam->cl_size;
+  double norm = pinparam->norm;
+  double factor = pinparam->factor;
+
+  int i;
+
+  ppspec->cl = malloc(cl_size*sizeof(double));
+  ppspec->cl_size = cl_size;
+
+  for (i=0; i<cl_size; i++) {
+    ppspec->cl[i] = norm*exp(factor*incl[i]);
+  }
 
   return 0;
 }

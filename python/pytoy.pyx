@@ -27,6 +27,9 @@ class Test_Compute:
         self.a = a
         self.b = b
 
+    def greet(self):
+        print('Hello, Niuniu!')
+
     def add(self):
         return add(self.a, self.b)
 

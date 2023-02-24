@@ -19,6 +19,12 @@ extern "C" {
     struct inparam * pinparam,
     struct pspec * ppspec
     );
+
+  int calculate_exp_pspec (
+    struct inparam * pinparam,
+    double * incl,
+    struct pspec * ppspec
+    );
 #ifdef __cplusplus
 }
 #endif

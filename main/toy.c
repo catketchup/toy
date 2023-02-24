@@ -2,7 +2,7 @@
 #include "pspec.h"
 #include "stdio.h"
 
-/* gcc -g toy.c ../source/pspec.c -o toy -I ../include/ */
+/* gcc -g toy.c ../source/pspec.c ./source/inparam.c -o toy -I ../include/ -lm*/
 
 int main(){
   int cl_size = 10;
@@ -10,6 +10,10 @@ int main(){
   double factor = 3.0;
   double a = 1;
   double b = 2;
+
+  /* test add(a, b) */
+  double c = add(a, b);
+  printf("%f \n", c);
 
   struct inparam * pinparam;
   struct pspec * ppspec;
@@ -25,17 +29,30 @@ int main(){
   pinparam->norm = norm;
   pinparam->factor = factor;
 
-
-  calculate_pspec(pinparam, ppspec);
-
   int i;
+
+  /* test calculate_pspec(pinparam, ppspec) */
+  calculate_pspec(pinparam, ppspec);
   for(i=0; i<cl_size; i++) {
     printf("%f \n", ppspec->cl[i]);
   }
 
   printf("\n");
-  double c = add(a, b);
-  printf("%f \n", c);
+
+  /* test calculate_pspec(pinparam, ppspec) */
+  /* create an input cl */
+  double * incl = malloc(cl_size*sizeof(double));
+
+  for(i=0; i<cl_size; i++) {
+    incl[i] = 2*i;
+  }
+
+  calculate_exp_pspec (pinparam, incl, ppspec);
+  for(i=0; i<cl_size; i++) {
+    printf("%f \n", ppspec->cl[i]);
+  }
+
+  printf("\n");
 
   return 0;
 }
