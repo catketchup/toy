@@ -1840,6 +1840,7 @@ static const char __pyx_k_Compute[] = "Compute";
 static const char __pyx_k_cl_size[] = "cl_size";
 static const char __pyx_k_default[] = "default";
 static const char __pyx_k_prepare[] = "__prepare__";
+static const char __pyx_k_Hello_NN[] = "Hello, NN!";
 static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_setstate[] = "__setstate__";
@@ -1847,7 +1848,6 @@ static const char __pyx_k_TypeError[] = "TypeError";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_ImportError[] = "ImportError";
-static const char __pyx_k_Hello_Niuniu[] = "Hello, Niuniu!";
 static const char __pyx_k_Test_Compute[] = "Test_Compute";
 static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
 static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
@@ -1861,7 +1861,7 @@ static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __red
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 static PyObject *__pyx_n_s_Cl;
 static PyObject *__pyx_n_s_Compute;
-static PyObject *__pyx_kp_s_Hello_Niuniu;
+static PyObject *__pyx_kp_s_Hello_NN;
 static PyObject *__pyx_n_s_ImportError;
 static PyObject *__pyx_n_s_Test_Compute;
 static PyObject *__pyx_n_s_Test_Compute___init;
@@ -2070,7 +2070,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute___init__(CYTHON_UNUSED PyObject 
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  */
 
@@ -2099,17 +2099,17 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_2greet(CYTHON_UNUSED PyObject *_
   /* "pytoy.pyx":32
  * 
  *     def greet(self):
- *         print('Hello, Niuniu!')             # <<<<<<<<<<<<<<
+ *         print('Hello, NN!')             # <<<<<<<<<<<<<<
  * 
  *     def add(self):
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Hello_Niuniu) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Hello_NN) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
 
   /* "pytoy.pyx":31
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  */
 
@@ -2126,7 +2126,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_2greet(CYTHON_UNUSED PyObject *_
 }
 
 /* "pytoy.pyx":34
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
@@ -2181,7 +2181,7 @@ static PyObject *__pyx_pf_5pytoy_12Test_Compute_4add(CYTHON_UNUSED PyObject *__p
   goto __pyx_L0;
 
   /* "pytoy.pyx":34
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
@@ -4178,7 +4178,7 @@ static struct PyModuleDef __pyx_moduledef = {
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Cl, __pyx_k_Cl, sizeof(__pyx_k_Cl), 0, 0, 1, 1},
   {&__pyx_n_s_Compute, __pyx_k_Compute, sizeof(__pyx_k_Compute), 0, 0, 1, 1},
-  {&__pyx_kp_s_Hello_Niuniu, __pyx_k_Hello_Niuniu, sizeof(__pyx_k_Hello_Niuniu), 0, 0, 1, 0},
+  {&__pyx_kp_s_Hello_NN, __pyx_k_Hello_NN, sizeof(__pyx_k_Hello_NN), 0, 0, 1, 0},
   {&__pyx_n_s_ImportError, __pyx_k_ImportError, sizeof(__pyx_k_ImportError), 0, 0, 1, 1},
   {&__pyx_n_s_Test_Compute, __pyx_k_Test_Compute, sizeof(__pyx_k_Test_Compute), 0, 0, 1, 1},
   {&__pyx_n_s_Test_Compute___init, __pyx_k_Test_Compute___init, sizeof(__pyx_k_Test_Compute___init), 0, 0, 1, 1},
@@ -4302,7 +4302,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  */
   __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 31, __pyx_L1_error)
@@ -4311,7 +4311,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_python_pytoy_pyx, __pyx_n_s_greet, 31, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 31, __pyx_L1_error)
 
   /* "pytoy.pyx":34
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
@@ -4733,7 +4733,7 @@ if (!__Pyx_RefNanny) {
  *         self.b = b
  * 
  *     def greet(self):             # <<<<<<<<<<<<<<
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_5pytoy_12Test_Compute_3greet, 0, __pyx_n_s_Test_Compute_greet, NULL, __pyx_n_s_pytoy, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
@@ -4742,7 +4742,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pytoy.pyx":34
- *         print('Hello, Niuniu!')
+ *         print('Hello, NN!')
  * 
  *     def add(self):             # <<<<<<<<<<<<<<
  *         return add(self.a, self.b)
