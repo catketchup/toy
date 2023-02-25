@@ -2,7 +2,7 @@
 #include "pspec.h"
 #include "stdio.h"
 
-/* gcc -g toy.c ../source/pspec.c ./source/inparam.c -o toy -I ../include/ -lm*/
+/* gcc -g toy.c ../source/pspec.c ../source/inparam.c -o toy -I ../include/ -lm */
 
 int main(){
   int cl_size = 10;
