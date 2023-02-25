@@ -29,7 +29,7 @@ class Test_Compute:
         self.b = b
 
     def greet(self):
-        print('Hello, Niuniu!')
+        print('Hello, NN!')
 
     def add(self):
         return add(self.a, self.b)
