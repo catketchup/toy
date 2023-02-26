@@ -47,7 +47,7 @@ int main(){
     incl[i] = 2*i;
   }
 
-  calculate_exp_pspec (pinparam, incl, ppspec);
+  calculate_exp_pspec (pinparam, 1, incl, ppspec);
   for(i=0; i<cl_size; i++) {
     printf("%f \n", ppspec->cl[i]);
   }

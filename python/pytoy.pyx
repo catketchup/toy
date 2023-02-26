@@ -21,7 +21,7 @@ cdef extern from "pspec.h":
         double * cl
 
     int calculate_pspec(void * pinparam, void * ppspec)
-    int calculate_exp_pspec(void * pinparam, double * incl, void * ppspec)
+    int calculate_exp_pspec(void * pinparam, int ncl, double * incl, void * ppspec)
 
 class Test_Compute:
     def __init__(self, a, b):
@@ -62,23 +62,19 @@ cdef class Compute:
         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
         return output
 
-    def calculate_exp_pspec(self, incl):
-        cdef double * incl_c = <double*> calloc(self.pinparam.cl_size, sizeof(double))
-
-        for ell in range(self.pinparam.cl_size):
-            incl_c[ell] = incl[ell]
-
-        calculate_exp_pspec(self.pinparam, incl_c, self.ppspec)
+    def calculate_exp_pspec(self, double[:,:,:] incl):
+        calculate_exp_pspec(self.pinparam, 1, &incl[0,0,0], self.ppspec)
 
         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
 
         for ell in range(self.pinparam.cl_size):
             cl[ell] = self.ppspec.cl[ell]
 
-        output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
+        # cdef double[:] cl
+        # cl[0] = self.ppspec.cl[0]
+        return cl
 
-        free(incl_c)
-        return output
+        # return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
 
     def get_cl_size(self):
         print(self.pinparam.cl_size)

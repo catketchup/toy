@@ -22,6 +22,7 @@ extern "C" {
 
   int calculate_exp_pspec (
     struct inparam * pinparam,
+    int ncl,
     double * incl,
     struct pspec * ppspec
     );
