@@ -73,7 +73,7 @@ cdef class Compute:
 
         return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
 
-    def test_ndarray(self, nmap, double[:,:,:] incl):
+    def test_ndarray(self, nmap, double[:,:,::1] incl):
         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
 
         cl = np.zeros(nmap*nmap*self.pinparam.cl_size, dtype=np.double)

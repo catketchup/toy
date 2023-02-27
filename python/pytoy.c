@@ -2102,7 +2102,7 @@ static int __Pyx_ValidateAndInit_memviewslice(
 static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_ds_double(PyObject *, int writable_flag);
 
 /* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dsdsds_double(PyObject *, int writable_flag);
+static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_double(PyObject *, int writable_flag);
 
 /* Print.proto */
 static int __Pyx_Print(PyObject*, PyObject *, int);
@@ -3523,7 +3523,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_6calculate_exp_pspec(struct __pyx_obj_
  * 
  *         return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}             # <<<<<<<<<<<<<<
  * 
- *     def test_ndarray(self, nmap, double[:,:,:] incl):
+ *     def test_ndarray(self, nmap, double[:,:,::1] incl):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_7 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 74, __pyx_L1_error)
@@ -3586,7 +3586,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_6calculate_exp_pspec(struct __pyx_obj_
 /* "pytoy.pyx":76
  *         return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  * 
- *     def test_ndarray(self, nmap, double[:,:,:] incl):             # <<<<<<<<<<<<<<
+ *     def test_ndarray(self, nmap, double[:,:,::1] incl):             # <<<<<<<<<<<<<<
  *         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
  * 
  */
@@ -3638,7 +3638,7 @@ static PyObject *__pyx_pw_5pytoy_7Compute_9test_ndarray(PyObject *__pyx_v_self, 
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_nmap = values[0];
-    __pyx_v_incl = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_incl.memview)) __PYX_ERR(0, 76, __pyx_L3_error)
+    __pyx_v_incl = __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_double(values[1], PyBUF_WRITABLE); if (unlikely(!__pyx_v_incl.memview)) __PYX_ERR(0, 76, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3680,7 +3680,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_8test_ndarray(struct __pyx_obj_5pytoy_
 
   /* "pytoy.pyx":77
  * 
- *     def test_ndarray(self, nmap, double[:,:,:] incl):
+ *     def test_ndarray(self, nmap, double[:,:,::1] incl):
  *         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)             # <<<<<<<<<<<<<<
  * 
  *         cl = np.zeros(nmap*nmap*self.pinparam.cl_size, dtype=np.double)
@@ -3706,7 +3706,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_8test_ndarray(struct __pyx_obj_5pytoy_
     __Pyx_RaiseBufferIndexError(__pyx_t_5);
     __PYX_ERR(0, 77, __pyx_L1_error)
   }
-  (void)(test_ndarray(__pyx_v_self->pinparam, __pyx_t_1, (&(*((double *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_incl.data + __pyx_t_2 * __pyx_v_incl.strides[0]) ) + __pyx_t_3 * __pyx_v_incl.strides[1]) ) + __pyx_t_4 * __pyx_v_incl.strides[2]) )))), __pyx_v_self->ppspec));
+  (void)(test_ndarray(__pyx_v_self->pinparam, __pyx_t_1, (&(*((double *) ( /* dim=2 */ ((char *) (((double *) ( /* dim=1 */ (( /* dim=0 */ (__pyx_v_incl.data + __pyx_t_2 * __pyx_v_incl.strides[0]) ) + __pyx_t_3 * __pyx_v_incl.strides[1]) )) + __pyx_t_4)) )))), __pyx_v_self->ppspec));
 
   /* "pytoy.pyx":79
  *         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
@@ -3849,7 +3849,7 @@ static PyObject *__pyx_pf_5pytoy_7Compute_8test_ndarray(struct __pyx_obj_5pytoy_
   /* "pytoy.pyx":76
  *         return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
  * 
- *     def test_ndarray(self, nmap, double[:,:,:] incl):             # <<<<<<<<<<<<<<
+ *     def test_ndarray(self, nmap, double[:,:,::1] incl):             # <<<<<<<<<<<<<<
  *         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
  * 
  */
@@ -24034,17 +24034,17 @@ __pyx_fail:
 }
 
 /* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dsdsds_double(PyObject *obj, int writable_flag) {
+  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_d_d_dc_double(PyObject *obj, int writable_flag) {
     __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
     __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_STRIDED) };
+    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_FOLLOW), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_FOLLOW), (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_CONTIG) };
     int retcode;
     if (obj == Py_None) {
         result.memview = (struct __pyx_memoryview_obj *) Py_None;
         return result;
     }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, 0,
-                                                 PyBUF_RECORDS_RO | writable_flag, 3,
+    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, __Pyx_IS_C_CONTIG,
+                                                 (PyBUF_C_CONTIGUOUS | PyBUF_FORMAT) | writable_flag, 3,
                                                  &__Pyx_TypeInfo_double, stack,
                                                  &result, obj);
     if (unlikely(retcode == -1))
