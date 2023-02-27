@@ -21,7 +21,8 @@ cdef extern from "pspec.h":
         double * cl
 
     int calculate_pspec(void * pinparam, void * ppspec)
-    int calculate_exp_pspec(void * pinparam, int ncl, double * incl, void * ppspec)
+    int calculate_exp_pspec(void * pinparam, double * incl, void * ppspec)
+    int test_ndarray(void * pinparam, int nmap, double * incl, void * ppspec)
 
 class Test_Compute:
     def __init__(self, a, b):
@@ -62,19 +63,39 @@ cdef class Compute:
         output = {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
         return output
 
-    def calculate_exp_pspec(self, double[:,:,:] incl):
-        calculate_exp_pspec(self.pinparam, 1, &incl[0,0,0], self.ppspec)
+    def calculate_exp_pspec(self, double[:] incl):
+        calculate_exp_pspec(self.pinparam, &incl[0], self.ppspec)
 
         cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
 
         for ell in range(self.pinparam.cl_size):
             cl[ell] = self.ppspec.cl[ell]
 
-        # cdef double[:] cl
-        # cl[0] = self.ppspec.cl[0]
+        return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
+
+    def test_ndarray(self, nmap, double[:,:,:] incl):
+        test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
+
+        cl = np.zeros(nmap*nmap*self.pinparam.cl_size, dtype=np.double)
+
+        for i in range(nmap*nmap*self.pinparam.cl_size):
+            cl[i] = self.ppspec.cl[i]
+
         return cl
 
-        # return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
+    # def test_pyobject(self):
+    #     # cdef double *ptr=[1,2,3]
+    #     # cdef double ptr=1
+    #     cdef np.ndarray[np.float64_t, ndim=1] cov
+    #     cov = np.zeros(10)
+
+    #     return cov
+
+    # def test_return_Cpointer(self, double[:] incl):
+    #     calculate_exp_pspec(self.pinparam, &incl[0], self.ppspec)
+
+    #     return self.self.ppspec.cl
+
 
     def get_cl_size(self):
         print(self.pinparam.cl_size)

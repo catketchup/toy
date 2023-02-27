@@ -4,8 +4,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-struct pspec {
-  int cl_size;
+struct pspec {int cl_size;
+  int nmap;
   double * cl;
 };
 
@@ -22,9 +22,14 @@ extern "C" {
 
   int calculate_exp_pspec (
     struct inparam * pinparam,
-    int ncl,
     double * incl,
     struct pspec * ppspec
+    );
+
+  int test_ndarray(struct inparam * pinparam,
+                   int nmap,
+                   double * incl,
+                   struct pspec * ppspec
     );
 #ifdef __cplusplus
 }
