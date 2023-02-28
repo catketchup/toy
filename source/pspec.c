@@ -40,7 +40,6 @@ int calculate_exp_pspec (struct inparam * pinparam,
 
   int i;
 
-  ppspec->cl = malloc(cl_size*sizeof(double));
   ppspec->cl_size = cl_size;
 
   for (i=0; i<cl_size; i++) {

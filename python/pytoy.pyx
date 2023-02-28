@@ -64,14 +64,13 @@ cdef class Compute:
         return output
 
     def calculate_exp_pspec(self, double[:] incl):
+        cdef np.ndarray[np.float64_t, ndim=1] cl = np.zeros(self.pinparam.cl_size)
+        self.ppspec.cl = &cl[0]
+
         calculate_exp_pspec(self.pinparam, &incl[0], self.ppspec)
 
-        cl = np.zeros(self.pinparam.cl_size, dtype=np.double)
-
-        for ell in range(self.pinparam.cl_size):
-            cl[ell] = self.ppspec.cl[ell]
-
         return {'ell':np.arange(self.pinparam.cl_size), 'Cl':cl}
+
 
     def test_ndarray(self, nmap, double[:,:,::1] incl):
         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
@@ -82,20 +81,6 @@ cdef class Compute:
             cl[i] = self.ppspec.cl[i]
 
         return cl
-
-    # def test_pyobject(self):
-    #     # cdef double *ptr=[1,2,3]
-    #     # cdef double ptr=1
-    #     cdef np.ndarray[np.float64_t, ndim=1] cov
-    #     cov = np.zeros(10)
-
-    #     return cov
-
-    # def test_return_Cpointer(self, double[:] incl):
-    #     calculate_exp_pspec(self.pinparam, &incl[0], self.ppspec)
-
-    #     return self.self.ppspec.cl
-
 
     def get_cl_size(self):
         print(self.pinparam.cl_size)
