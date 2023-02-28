@@ -57,7 +57,6 @@ int test_ndarray(struct inparam * pinparam,
   ppspec->cl_size = pinparam->cl_size;
   ppspec->nmap = nmap;
 
-  ppspec->cl = malloc(nmap*nmap*ppspec->cl_size*sizeof(double));
   int i;
   for(i=0; i<nmap*nmap*ppspec->cl_size; i++){
     ppspec->cl[i] = incl[i];

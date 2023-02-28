@@ -73,12 +73,10 @@ cdef class Compute:
 
 
     def test_ndarray(self, nmap, double[:,:,::1] incl):
+        cdef np.ndarray[np.float64_t, ndim=3] cl = np.zeros([nmap, nmap, self.pinparam.cl_size])
+        self.ppspec.cl = &cl[0,0,0]
+
         test_ndarray(self.pinparam, nmap, &incl[0,0,0], self.ppspec)
-
-        cl = np.zeros(nmap*nmap*self.pinparam.cl_size, dtype=np.double)
-
-        for i in range(nmap*nmap*self.pinparam.cl_size):
-            cl[i] = self.ppspec.cl[i]
 
         return cl
 
