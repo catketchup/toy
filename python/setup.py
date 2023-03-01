@@ -10,7 +10,6 @@ root_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 toy_extension = Extension(name='pytoy',
                           sources=['python/pytoy.pyx'],
-                          # libraries=['pspec', 'inparam'],
                           libraries=['toy'],
                           library_dirs=['build/lib'],
                           include_dirs=['include',
